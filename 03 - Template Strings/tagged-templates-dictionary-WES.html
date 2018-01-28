@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tagged Templates</title>
+  <style>
+    abbr {
+      border-bottom:1px dotted grey;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bio">
+
+  </div>
+
+<script>
+  const dict = {
+    HTML: 'Hyper Text Markup Language',
+    CSS: 'Cascading Style Sheets',
+    JS: 'JavaScript'
+  };
+
+  function addAbbrviations(strings, ...values) {
+    //console.log('strings', strings);
+    //console.log('values', values);
+    const abbreviated = values.map(value => {
+      // if the dictionary has an item for that value
+      //console.log('value', value);
+      if(dict[value]) {
+        return `<abbr title="${dict[value]}">${value}</abbr>`
+      }
+      return value;
+    });
+    //console.log(abbreviated);
+    // reduce takes a function, and with what you start
+    // what u start is sec arg so we start with ''
+    // reduce loop over
+    // and build the string on fly
+    // sentence = total, string = curr value, i = index
+    return strings.reduce((sentence, string, i) => {
+      return `${sentence}${string}${abbreviated[i] || ''}`
+    }, '')
+  }
+
+  const first = 'Wes';
+  const last = 'Bos';
+  const sentence = addAbbrviations`Hello my name is ${first} ${last} and I love to code ${'HTML'}, ${'CSS'} and ${'JS'}`;
+
+  const bio = document.querySelector('.bio');
+  const p = document.createElement('p');
+  p.innerHTML = sentence;
+  bio.appendChild(p)
+
+</script>
+</body>
+</html>

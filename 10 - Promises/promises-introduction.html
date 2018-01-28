@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promises!</title>
+</head>
+<body>
+<script>
+console.log("Going to fetch(collect) latest post");
+const postsPromise = fetch('http://wesbos.com/wp-json/wp/v2/posts');
+console.log("Done!");
+console.log(postsPromise);
+
+// this is a callback that will run
+// only when someone clicks on a link
+//$('a').on('click', function() {
+	//alert('hey');
+//});
+
+// same with then that will run
+// only when data comes back
+postsPromise
+  .then(data => data.json())
+  .then(data => { console.log(data) })
+  .catch((err) => {
+    console.error(err);
+  })
+
+</script>
+</body>
+</html>

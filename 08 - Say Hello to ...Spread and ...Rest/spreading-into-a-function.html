@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spread Examples</title>
+</head>
+<body>
+<script>
+  const inventors = ['Einstein', 'Newton', 'Galileo'];
+  const newInventors = ['Musk', 'Jobs'];
+
+  console.log('======add arrays old way=====');
+  // inventors.push.apply(inventors, newInventors);
+  // console.log(inventors);
+
+  console.log('======add arrays with spread=====');
+  inventors.push(...newInventors);
+  console.log(inventors);
+
+  console.log('======spread in functions=====');
+  const name = ['sorin', 'dragomir'];
+  function sayHi(first, last) {
+    console.log(`Hello ${first} ${last}`);
+  }
+  // sorin will be 1st arg, dragomir 2nd
+  sayHi(...name);
+
+</script>
+</body>
+</html>
+
+

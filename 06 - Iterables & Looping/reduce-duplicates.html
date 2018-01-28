@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transform Object Into Array</title>
+</head>
+<body>
+  <script>
+  const colors = ["red", "red", "green", "blue", "green", "yellow", "black", "white"];
+
+  // const distinctColors = colors.reduce((distinct, color) => {
+  //   (distinct.indexOf(color) !== -1) ? distinct : [...distinct, color], []});
+  // }
+  const distinctColors = colors.reduce((distinct, color) => {
+    if(distinct.indexOf(color) !== -1) {
+      console.log('distinct', distinct);
+      return distinct;
+    } else {
+      console.log('...distinctttt', [...distinct]);
+      console.log('colorrrrrr', [color]);
+      console.log('...distinct, color', [...distinct, color]);
+      console.log('---------------------------');
+      return [...distinct, color];
+    }
+  }, []);
+
+  console.log('distinctColors', distinctColors);
+  // ["red", "green", "blue"]
+
+</script>
+</body>
+</html>

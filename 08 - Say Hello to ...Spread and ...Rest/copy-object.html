@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Copy objects not modify originals</title>
+</head>
+<body>
+  <script>
+
+  let color_lawn = {
+    title: "lawn",
+    color: "#00FF00",
+    rating: 0
+  }
+
+  const rateColor = (color, rating) =>
+  ({
+    ...color,
+    rating
+  })
+
+console.log(rateColor(color_lawn, 5)) // 5
+console.log(color_lawn.rating) // 0
+
+59
+  </script>
+</body>
+</html>

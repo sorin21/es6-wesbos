@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Map</title>
+</head>
+<body>
+  <script>
+  let schools = [
+    { name: "Yorktown"},
+    { name: "Stratford" },
+    { name: "Washington & Lee"},
+    { name: "Wakefield"}
+  ];
+
+  console.log('schools', schools);
+  const editName = (oldName, name, arr) => arr.map(item => {
+
+    console.log('item.name === oldName',`${item.name} === ${oldName} is  ${item.name === oldName}`)
+
+    if (item.name === oldName) {
+      console.log('...item, name', {...item, name})
+      // we replace the item at that index of the item 
+      // we wish to edit in the new array with the new object.
+      return {
+        ...item,
+        name
+      }
+    } else {
+      console.log('item',  item)
+      //  imply package the same item into the new array
+      return item
+    }
+  })
+
+  // OR shorter
+  const editName2 = (oldName, name, arr) => 
+    arr.map(item => (item.name === oldName) ? ({...item,name}) : item);
+
+  let updatedSchools = editName("Yorktown", "HB Woodlawn", schools)
+  console.log( 'updatedSchools', updatedSchools )
+  
+  </script>
+</body>
+</html>

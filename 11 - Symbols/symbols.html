@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Symbols</title>
+</head>
+<body>
+<script>
+  const wes = Symbol('Wes');
+  const person = Symbol('Wes');
+  // symbols are unique identyfiers and help us
+  // avoinding name colision
+  // use simbol when you want to create
+  // a unique property
+  const classRoom = {
+    [Symbol('Mark')] : { grade: 50, gender: 'male' },
+    [Symbol('olivia')]: { grade: 80, gender: 'female' },
+    [Symbol('olivia')]: { grade: 80, gender: 'female' },
+  };
+
+  // can't loop over simbols
+  for (const person in classRoom) {
+    console.log(person);
+  }
+
+  const syms = Object.getOwnPropertySymbols(classRoom);
+  const data = syms.map(sym => {classRoom[sym]; console.log(classRoom[sym]);});
+  //console.log(data);
+
+</script>
+</body>
+</html>

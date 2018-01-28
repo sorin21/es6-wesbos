@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tagged Templates</title>
+  <style>
+    .hl {
+      background: #ffc600;
+    }
+  </style>
+</head>
+<body>
+<script>
+  // ... takes the rest of values and put them in an array
+  function highlight(strings, ...values) {
+    // debugger;
+    let str = '';
+    // loop over strings array
+    // i = index
+    strings.forEach((string, i) => {
+      // concatenate on what we have
+      // give me 1st from strings and 1st from values
+      // and add them
+      //str += string + (values[i] || '');
+      str += `${string} <span contenteditable class="hl">${(values[i] || '')}</span>` ;
+    });
+    return str;
+  }
+
+  const name = 'Snickers';
+  const age = 100;
+
+  const sentence = highlight`My dog's name is ${name} and he is ${age} years old`;
+  document.body.innerHTML = sentence;
+  console.log(sentence);
+
+</script>
+</body>
+</html>

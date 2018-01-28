@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <script>
+    var morning = {
+      breakfast: "oatmeal",
+      lunch: "peanut butter and jelly"
+    }
+
+    var dinner = {
+      item1: "mac and cheese",
+      item2: "alibabab"
+    }
+
+    var backpackingMeals = {
+      ...morning,
+      ...dinner
+    }
+
+    console.log(backpackingMeals)
+
+    console.log('-----------------')
+
+    let list = [
+      { title: "Rad Red"},
+      { title: "Lawn"},
+      { title: "Party Pink"}
+    ]
+
+    console.log(list);
+
+    // var addColor = function(title, colors) {
+    //   colors.push({ title: title })
+    //   return colors;
+    // }
+
+    const addColor = (title, list) => [...list, {title}];
+
+    console.log(addColor("Glam Green", list).length) // 4
+    console.log(list.length) // 3
+    console.log(addColor("Glam Green", list)) 
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The ...Spread Operator</title>
+</head>
+<body>
+<script>
+
+  const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian', 'Margherita'];
+  const specialty = ['Meatzza', 'Spicy Mama', 'Margherita'];
+
+  // old way
+  const pizzasOld = featured.concat(specialty);
+  console.log(pizzasOld);
+
+  // old way 2
+  let pizzasOld2 = [];
+  pizzasOld2 = pizzasOld2.concat(featured);
+  pizzasOld2.push('veg');
+  pizzasOld2 = pizzasOld2.concat(specialty);
+  console.log(pizzasOld2);
+  const deepDish = {
+    pizzaName: 'Deep Dish',
+    size: 'Medium',
+    ingredients: ['Marinara', 'Italian Sausage', 'Dough', 'Cheese']
+  };
+
+  // new way concat
+  // sprean operator iterate over each elem
+  // from an array
+  const pizzas = [...featured, 'veg',  ...specialty];
+  console.log(pizzas);
+
+  // copy an array
+  const pizzaFriday = [...pizzas];
+
+</script>
+</body>
+</html>

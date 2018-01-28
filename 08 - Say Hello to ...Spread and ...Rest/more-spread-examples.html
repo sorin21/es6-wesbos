@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spread Examples</title>
+</head>
+<body>
+  <div class="people">
+    <p>Wes</p>
+    <p>Kait</p>
+    <p>Randy</p>
+  </div>
+<script>
+  console.log('======spread node list=====');
+  // select all people and make an array
+  // one way:
+   const people = [...document.querySelectorAll('.people p')];
+  // second way
+  //const people = Array.from(document.querySelectorAll('.people p'));
+  console.log(people);
+
+  console.log('======map======');
+  const names = people.map(name => name.textContent);
+  console.log(names);
+
+  console.log('======for======');
+  for(const name of names) {
+    console.log(name);
+  }
+
+  console.log('======filter=====');
+  const filtered = names.filter((name, i) => console.log(`${name} is ${i + 1}`));
+
+
+  const deepDish = {
+    pizzaName: 'Deep Dish',
+    size: 'Medium',
+    ingredients: ['Marinara', 'Italian Sausage', 'Dough', 'Cheese']
+  };
+
+  const shoppingList = ['Milk', 'Flour', ...deepDish.ingredients];
+
+ 
+  console.log('======spread objects=====');
+  const comments = [
+    { id: 209384, text: 'I love your dog!' },
+    { id: 523423, text: 'Cuuute! 🐐' },
+    { id: 632429, text: 'You are so dumb' },
+    { id: 192834, text: 'Nice work on this wes!' },
+  ];
+  const id = 632429;
+
+  // delete this id 
+  const commentIndex = comments.findIndex(comment => comment.id === id);
+  // get everything before and after the mean comment
+  const newComments = [...comments.slice(0,commentIndex), ...comments.slice(commentIndex + 1)];
+  console.log(newComments);
+
+  for(const [i, msg] of newComments.entries()) {
+    console.log(msg);
+  }
+ 
+
+</script>
+</body>
+</html>

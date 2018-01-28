@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Filter</title>
+</head>
+<body>
+  <script>
+   const schools = [
+    "Yorktown",
+    "Washington & Lee",
+    "Wakefield"
+  ]
+
+  console.log('--console.log( schools.join(", ") )--', schools.join(", ") )
+  // "Yorktown, Washington & Lee, Wakefield"
+
+  // create a new array of the schools that begin with the letter “W”
+  const wSchools = schools.filter(school => school[0] === "W")
+  console.log( '\n---------wSchools-----------', wSchools )
+  // ["Washington & Lee", "Wakefield"]
+
+
+  console.log('\n--console.log(cutSchool("Washington & Lee"), schools).join(', ')--')
+  // remove an item from an array
+  const cutSchool = (cut, list) => list.filter(school => school !== cut);
+  console.log(cutSchool("Washington & Lee", schools).join(', '));
+
+
+</script>
+</body>
+</html>

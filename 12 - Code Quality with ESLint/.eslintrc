@@ -1,0 +1,16 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "comment": "eslint:recommended(airbnb)", 
+  "extends": "airbnb",
+  "rules": {
+    "no-console": 0,
+    "comma-dangle:": 0,
+    "no-unused-vars": [1, { "argsIgnorePattern": "res|next|^err" }]
+  },
+  "plugins": ["html", "markdown"],
+  "eslint linebreak-style": ["error", "windows"]
+}
+

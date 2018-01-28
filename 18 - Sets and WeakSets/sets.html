@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sets</title>
+</head>
+<body>
+<script>
+  // set is a unique array where u 
+  // can add the same property once
+  // doesn't have index
+  const people = new Set();
+  people.add('Wes');
+  people.add('Snickers');
+  people.add('Kait');
+  console.log(people);
+  people.delete('Wes');
+  console.log(people);
+
+  // empty people
+  // people.clear();
+  // same people.keys()
+  console.log(people.values());
+
+  for (const person of  people) {
+    console.log(person);
+  }
+
+  // u have to pass arguments in an array
+  const students = new Set(['Wes', 'Kara', 'Tony']);
+
+  const dogs = ['Snickers', 'Sunny'];
+  const dogSet = new Set(dogs);
+  console.log(dogSet);
+  console.log("students.has('Tony')", students.has('Tony'));
+
+</script>
+</body>
+</html>

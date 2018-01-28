@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Proxies!</title>
+</head>
+<body>
+<script>
+  const phoneHandler = {
+    set(target, name, value) {
+      target[name] = value.match(/[0-9]/g).join('');
+    },
+    get(target, name) {
+      return target[name].replace(/(\d{3})(\d{3})(\d{4})/, '($1)-$2-$3');
+    }
+  }
+
+  const phoneNumbers = new Proxy({}, phoneHandler);
+  const phoneMobile = '0741 301 619';
+  const phoneHome = '(0239)-203-634';
+
+  console.log("phoneMobile", phoneMobile);
+  console.log("phoneHome", phoneHome);
+
+  const phoneHome2 = '543 5435345 445';
+  console.log("phoneHome2", phoneHome2);
+
+</script>
+</body>
+</html>

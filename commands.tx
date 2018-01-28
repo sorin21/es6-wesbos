@@ -1,0 +1,47 @@
+1. npm i eslint --save-dev -g
+
+// create a dependeincies file and a normal one
+2. touch .eslintrc
+	 touch code.js
+
+	 // open the file
+	 subl code.js
+
+// install airbnb dependecies
+3. npm info "eslint-config-airbnb@latest" peerDependencies -g
+
+3a. eslint bad-code.js 
+
+// fix the small errors
+4. eslint bad-code.js --fix
+
+5. sublime linter
+5a. sublime linter eslint
+
+// create npm package.json(enter till the end)
+6. npm init
+
+// check for sublime
+7. subl.exe 
+   // or simple
+   subl
+
+8. npm install jsonp --save
+
+9. npm install --save-dev webpack
+
+	 npm install babel-loader babel-core babel-preset-env --save-dev
+
+	 touch webpack.config.js
+
+// build is the build from package.json
+
+// creates a build file, bundle.js
+10. npm run build
+
+// 14 babel
+11. npm init
+		npm install babel-cli babel-preset-es2015 --save
+
+		// for testing spread op on objects
+		npm install --save-dev babel-plugin-transform-object-rest-spread

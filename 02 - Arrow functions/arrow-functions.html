@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow functions → → </title>
+</head>
+<body>
+<script>
+  const names = ['wes', 'kait', 'lux'];
+
+  const fullnames = names.map(function(name) {
+    return `${name} bos`;
+  });
+  console.log(fullnames);
+
+    // => is a fat arow
+  const fullnames2 = names.map(name => {
+    return `${name} bos`;
+  });
+  console.log(fullnames2);
+
+  // return is an explicit return means
+  // when you explicity write the word return
+  // delete the curly brackets from function is 
+  // gonna be an implicit return, means that we don't
+  // need to specify the return word, it will asume 
+  // that we want to return
+  const fullnames3 = names.map(name => `${name} bos`);
+  console.log(fullnames3);
+
+  // with no arguments
+  const fullnames4 =names.map(() => `cool bos`);
+  console.log(fullnames4);
+
+  const sayMyName = name => {console.log(`Hello ${name}`)};
+  sayMyName('Sorin');
+
+</script>
+</body>
+</html>

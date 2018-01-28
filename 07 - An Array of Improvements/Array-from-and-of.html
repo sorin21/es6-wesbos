@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array .from() and .of()</title>
+</head>
+  <div class="people">
+    <p>Wes</p>
+    <p>Kait</p>
+    <p>Snickers</p>
+  </div>
+<body>
+<script>
+
+  console.log('=====Array.from1====');
+  const people = document.querySelectorAll('.people p');
+
+  //sec elem in from is a map function
+  // and does the same thing like this
+  // peopleArray.map(person => person.textContent);
+  const peopleArray = Array.from(people, person => {
+    //console.log(people);
+    return person.textContent;
+  });
+
+  console.log('peopleArray', peopleArray);
+
+  console.log('=====Array.from2====');
+  function sumAll() {
+    //console.log(arguments);
+    const nums = Array.from(arguments);
+    // starts with zero
+    return nums.reduce((prev, next) => prev + next, 0)
+  }
+
+  const mySum = sumAll(1, 2, 2, 5);
+  console.log(mySum);
+
+  const ages = Array.of(12,4,23,62,34);
+  console.log(ages);
+
+
+  var list = [1,2,'a','b'];
+  function filter_list(l) {
+    // Return a new array with the strings filtered out
+    var newArr = [];
+    l.forEach(function(numb) {
+      
+      if(parseInt(Number(numb)) == numb && !isNaN(parseInt(numb, 10))){
+        //console.log(numb);
+        //console.log('newArr', newArr);
+        return newArr.push(numb);
+
+        //console.log('newArr', newArr);
+        //return arrRet;
+        //console.log('newArr', newArr);
+      }
+    });
+   
+  }
+  filter_list(list);
+
+
+
+function filter_list1(l) {
+  return l.filter(function(numb) {
+    return typeof numb == 'number'
+  });
+}
+console.log(filter_list1(list));
+
+
+
+function tickets(peopleInLine){
+    return peopleInLine.every(guy => guy % 25 == 0) ? 'YES' : 'NO. Vasya will not have enough money to give change to 100 dollars';
+}
+console.log(tickets([18, 25, 50, 50]));
+
+
+function dontGiveMeFive(start, end) {  
+  for(var count = 0; start <= end; start++) 
+    ((start+'').indexOf('5') !== -1) || count++;
+    return count;
+}
+
+
+
+console.log(dontGiveMeFive(0,3));
+
+</script>
+</body>
+</html>

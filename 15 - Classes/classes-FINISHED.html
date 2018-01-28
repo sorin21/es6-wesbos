@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inheritance Review</title>
+</head>
+<body>
+<script>
+  // this is a class declaration
+  class Dog {
+    // constructor is required
+    constructor(name, breed) {
+      this.name = name;
+      this.breed = breed;
+    }
+    bark() {
+      console.log(`Bark Bark! My name is ${this.name}`)
+    }
+    cuddle() {
+      console.log(`I love you owner!`);
+    }
+    // Static methods are called without 
+    // instantiating their class and cannot be 
+    // called through a class instance
+    static info() {
+      console.log('A dog is better than a cat by 10 times');
+    }
+    // is not a method
+    // is like a property
+    get description() {
+      return `${this.name} is a ${this.breed} type of dog`;
+    }
+    set nicknames(value) {
+      this.nick = value.trim();
+    }
+    get nicknames() {
+      return this.nick.toUpperCase();
+    }
+  }
+
+  const snickers = new Dog('Snickers', 'King Charles');
+  const sunny = new Dog('Sunny', 'Golden Doodle');
+  snickers.bark();
+  sunny.bark();
+  // static method called only using class name
+  Dog.info();
+  // get
+  console.log(snickers.description);
+  // set
+  snickers.nicknames = ' snicky ';
+  // get
+  console.log(snickers.nicknames);
+
+</script>
+</body>
+</html>

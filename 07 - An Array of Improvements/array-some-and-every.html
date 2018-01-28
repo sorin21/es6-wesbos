@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array .some() and .every()</title>
+</head>
+<body>
+<script>
+  const ages = [32, 15, 19, 12];
+
+  // 👵👨 is there at least one adult in the group?
+  const adultPresent = ages.some(age => age >= 18);
+  console.log(adultPresent);
+
+
+  // 🍻 is everyone old enough to drink?
+  const allOldEnough = ages.every(age => age >= 19);
+  console.log(allOldEnough);
+
+
+
+  function tickets(peopleInLine){
+	    return peopleInLine.every(guy => guy % 25 == 0) ? 'YES' : 'NO. Vasya will not have enough money to give change to 100 dollars';
+	}
+	console.log(tickets([25, 25, 50, 50]));
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Proxies!</title>
+</head>
+<body>
+<script>
+  const person = { name: 'Wes', age: 100 };
+  // proxy means to overwrite obj
+  // 1st parameter is target = witch obj
+  // you want to proxy
+  // 2nd parameter is the handler where u 
+  // specify all u want to rewrite
+  const personProxy = new Proxy(person, {
+    // get is call a trap
+    get(target, name) {
+      console.log('someone is asking for ', target, name);
+      return target[name].toUpperCase();
+    },
+    // set is also a trap
+    set(target, name, value) {
+      if(typeof value === 'string') {
+        target[name] = value.trim().toUpperCase() + '✂️';
+      }
+    }
+  });
+
+  console.log(personProxy.name)
+  personProxy.name = 'Wesley';
+  console.log(personProxy.name)
+</script>
+</body>
+</html>

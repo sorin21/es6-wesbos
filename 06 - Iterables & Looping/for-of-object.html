@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Iterables & Looping</title>
+</head>
+<body>
+
+<script>
+  const apple = {
+    color: 'Red',
+    size: 'Medium',
+    weight: 50,
+    sugar: 10
+  };
+
+  // for objects only for in work
+  // for of in es2017
+  for (const prop in apple) {
+    const value = apple[prop];
+    console.log(`${prop}: ${value}`);
+  }
+
+</script>
+</body>
+</html>
